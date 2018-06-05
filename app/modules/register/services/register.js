@@ -58,40 +58,6 @@ function addUserCategories(req, userId) {
 
     return DButilsAzureService.Insert(DButilsAzureService.connection, query);
 }
-//
-// function addUserQuestionsAndAnswersQuery(req, userId) {
-//     let query = "insert into UserQuestionAnswer (userId, questionId, answer) ";
-//     let questions = "'" + req.body.questions.substring(1, req.body.questions.length - 1) + "'";
-//     let answers = "'" + req.body.answers.substring(1, req.body.answers.length - 1) + "'";
-//
-//     questions = questions.substring(1, questions.length - 1).split(",");
-//     answers = answers.substring(1, answers.length - 1).split(",");
-//
-//     const numOfQuestionAnswers = answers.length;
-//
-//     console.log("*******");
-//     console.log(questions);
-//     console.log(answers);
-//
-//     for (let i = 0; i < numOfQuestionAnswers; i++) {
-//         query = query + "SELECT '" + userId + "', '" + questions[i] + "', '" + answers[i] + "' ";
-//         query = query + "UNION ALL ";
-//     }
-//
-//     query = query.substr(0, query.lastIndexOf('U'));
-//
-//     return query;
-// }
-//
-// function addUserQuestionsAndAnswers(req, userId) {
-//     return getLastAddedUserId().then(function (userId) {
-//         console.log("** Add user questions and answers **");
-//
-//         const query = addUserQuestionsAndAnswersQuery(req, userId);
-//
-//         return DButilsAzureService.Insert(DButilsAzureService.connection, query);
-//     });
-// }
 
 function getLastAddedUserId() {
     return new Promise(function (resolve, reject) {
